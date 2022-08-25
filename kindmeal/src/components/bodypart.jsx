@@ -80,7 +80,6 @@ function Body(){
     }
     return (
         <div>
-            Body...
             <div style={{backgroundColor:'#ececec'}}>
                 <GalleryComponent props={galleryComponent1Props}  />
                 <GalleryComponent props={galleryComponent2Props}/>
@@ -190,27 +189,27 @@ function GalleryComponent({props}  ){
                         <Box w='20%' h={props.boxH} >
                             <Image w='100%' h={props.imgH} src={props.src1}  rounded='md' ></Image>
                             <Heading color='gray' fontSize='1.25vw' fontWeight='400' > {props.imgHeading1} </Heading>
-                            <Text> {props.imgText1} </Text>
+                            <Text fontSize='1.15vw' > {props.imgText1} </Text>
                         </Box>
                         <Box w='20%'  h={props.boxH}>
                             <Image w='100%' h='200px'  src={props.src2} rounded='md' ></Image>
                             <Heading color='gray' fontSize='1.25vw' fontWeight='400' > {props.imgHeading2} </Heading>
-                            <Text> {props.imgText2} </Text>
+                            <Text fontSize='1.15vw' > {props.imgText2} </Text>
                         </Box>
                         <Box w='20%'  h={props.boxH} >
                             <Image w='100%' h={props.imgH}  src={props.src3} rounded='md' ></Image>
                             <Heading color='gray' fontSize='1.25vw' fontWeight='400' > {props.imgHeading3} </Heading>
-                            <Text> {props.imgText3} </Text>
+                            <Text fontSize='1.15vw' > {props.imgText3} </Text>
                         </Box>
                         <Box w='20%'  h={props.boxH}>
                             <Image w='100%' h={props.imgH}  src={props.src4} rounded='md' ></Image>
                             <Heading color='gray' fontSize='1.25vw' fontWeight='400' > {props.imgHeading4} </Heading>
-                            <Text> {props.imgText4} </Text>
+                            <Text fontSize='1.15vw' > {props.imgText4} </Text>
                         </Box>
                         <Box w='20%' h={props.boxH} >
                             <Image w='100%' h={props.imgH}   src={props.src5} rounded='md' ></Image>
                             <Heading color='gray' fontSize='1.25vw' fontWeight='400' > {props.imgHeading5} </Heading>
-                            <Text> {props.imgText5} </Text>
+                            <Text fontSize='1.15vw' > {props.imgText5} </Text>
                         </Box>
                     </Flex>
                 </Box>

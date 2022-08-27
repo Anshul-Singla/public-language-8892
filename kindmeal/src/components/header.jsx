@@ -1,8 +1,13 @@
 import { Box, Button, Center, Flex, Image, Spacer, Text, Tooltip } from "@chakra-ui/react";
-import LoginForm from "./LoginForm";
-import SignUpForm from "./Signup";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import { useContext } from "react";
+// import { AppContext } from "../context/AppContext";
+import LoginModalForm from "./LoginFormModalForm";
+import SignUpModalForm from "./SignupModalForm";
 
 function Header(){
+    const navigate = useNavigate();
     const onHoverStyle={
         bg:'blackAlpha.300',
     }
@@ -35,19 +40,20 @@ function Header(){
                         <Image  w='3.5%'  src=' https://www.kindmeal.my/images/follow_twitter_grey.png'/>
                     </Tooltip>
                     <Spacer/>
+                    
                     <Text  ml={5}  fontSize='1.25vw'  >Login</Text>
                     <Button ml={5}  fontSize='1.5vw' colorScheme='facebook' >Facebook</Button>
-                    <LoginForm text='Email' buttonStyles = {FormStyle.loginButtonStyle} />
+                    <LoginModalForm text='Email' buttonStyles = {FormStyle.loginButtonStyle} />
                     <Box borderLeft='1px' borderLeftColor='gray.600' mr={5} ml={5} >
-                        <SignUpForm text='Sign Up' textStyle={FormStyle.signUpTextStyle}  />
+                        <SignUpModalForm text='Sign Up' textStyle={FormStyle.signUpTextStyle}  />
                     </Box>
                 </Flex>
             </Center>
             <Box w='100%' bg='#2BB673' >
                 <Center>
                     <Flex w='80vw' justifyContent='space-between'>
-                        <Text p={2} fontSize='1.5vw' color='#fff' bg='blackAlpha.300' cursor='pointer' >Home</Text>
-                        <Text p={2} fontSize='1.5vw' color='#fff' _hover={onHoverStyle} cursor='pointer' >Meal Deals</Text>
+                        <Text p={2} fontSize='1.5vw' color='#fff' bg='blackAlpha.300' cursor='pointer' onClick={()=>{navigate('/')}} >Home</Text>
+                        <Text p={2} fontSize='1.5vw' color='#fff' _hover={onHoverStyle} cursor='pointer' onClick={()=>{navigate('/mealdeal')}}   >Meal Deals</Text>
                         <Text p={2} fontSize='1.5vw' color='#fff' _hover={onHoverStyle} cursor='pointer' >KindMoments</Text>
                         <Text p={2} fontSize='1.5vw' color='#fff' _hover={onHoverStyle} cursor='pointer' >Hot Picks</Text>
                         <Text p={2} fontSize='1.5vw' color='#fff' _hover={onHoverStyle} cursor='pointer' >Recipes</Text>

@@ -21,7 +21,7 @@ import {
     Link
   } from '@chakra-ui/react'
   import { TiSocialFacebookCircular } from 'react-icons/fa';
-  function LoginForm({text , buttonStyles}) {
+  function LoginModalForm({text , buttonStyles}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     // console.log(useDisclosure())
     return (
@@ -32,7 +32,7 @@ import {
           <ModalContent  padding='20px 0 '   >
             <ModalHeader ml='20px'>
                 <Center>
-                  <Image src='https://www.kindmeal.my/images/logo-kindmeal.png'      />
+                  <Image src='https://www.kindmeal.my/images/logo-kindmeal.png' />
                 </Center> 
             </ModalHeader>
             <ModalCloseButton />
@@ -70,4 +70,4 @@ import {
       </>
     )
   }
-export default LoginForm;
+export default LoginModalForm;

@@ -1,27 +1,16 @@
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    useDisclosure,
-    Button,
-    Image,
-    Text,
-    Flex,
-    Link,
-    Box,
-    Spacer,
+import {Modal,ModalOverlay,ModalContent,ModalHeader,ModalFooter,ModalBody,ModalCloseButton,useDisclosure,Button,Image,Text,Flex,Link,Box,Spacer,
   } from '@chakra-ui/react'
-  // import { Link as ReachLink } from "@reach/router"
+import { useContext } from 'react';
 import {   useNavigate,
-  Link as RouterLink,
+  Link as RouterLink,//an !important think to learn....
  } from 'react-router-dom';
-  function SignUpForm({text , textStyle}) {
+import Actions from '../context/actionCreator';
+import { AppContext } from '../context/AppContext';
+  function SignUpModalForm({text , textStyle}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const navigate = useNavigate()
+    const {state,dispatch} = useContext(AppContext);
+    // console.log(state);
     return (
       <>
         <Text as='button' style={textStyle} onClick={onOpen}>{text}</Text>
@@ -38,7 +27,7 @@ import {   useNavigate,
             </ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Box as='button'  border="2px solid grey" rounded={5} p={1} mb={5} onClick={()=> navigate('/join')} >
+              <Box as='button'  border="2px solid grey" rounded={5} p={1} mb={5} onClick={()=>( navigate('/join'),dispatch({type:Actions.INDIVIDUAL_TRUE}))} >
                 <Flex gap={5}        >
                   <Image src='https://www.kindmeal.my/images/join_normal.png'  w='50%' h='50%'       />
                   <Box>
@@ -48,7 +37,7 @@ import {   useNavigate,
                   </Box>
                  </Flex>
               </Box>
-              <Box as='button' border="2px solid grey" rounded={5} p={1} onClick={()=> navigate('/joinshop')} >
+              <Box as='button' border="2px solid grey" rounded={5} p={1} onClick={()=>(navigate('/join'),dispatch({type:Actions.INDIVIDUAL_false})) } >
                 <Flex gap={5}        >
                   <Image w='50%' h='50%' src='https://www.kindmeal.my/images/join_shop.png'         />
                   <Box>
@@ -71,4 +60,4 @@ import {   useNavigate,
       </>
     )
   }
-export default SignUpForm;
+export default SignUpModalForm;

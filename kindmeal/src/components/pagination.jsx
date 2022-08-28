@@ -1,4 +1,5 @@
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex, Icon, Text } from "@chakra-ui/react";
+import {ArrowRightIcon,ArrowLeftIcon} from '@chakra-ui/icons'
 
 function Pagination({totalPages,currentPage , handlePageChange , handleOnePageChange}){
     const style={
@@ -11,9 +12,15 @@ function Pagination({totalPages,currentPage , handlePageChange , handleOnePageCh
         return(
             <>
             <Flex w='80%' margin='50px auto' justifyContent='space-between'>
-                <Button onClick={()=>{handleOnePageChange(-1)}} style={{visibility: currentPage==1 ? 'hidden' : 'visible' }} >  {"<<"} Prev </Button>
                 <Flex   fontSize='1.5vw' alignItems='center' > Pages:  {pages} </Flex>
-                <Button onClick={()=>{handleOnePageChange(+1)}} style={{visibility: currentPage != totalPages ? 'visible' : 'hidden' }} > Next{">>"} </Button>
+                <Box>
+                    <Button onClick={()=>{handleOnePageChange(-1)}} style={{visibility: currentPage==1 ? 'hidden' : 'visible' }} mr={2} > 
+                    <Icon boxSize='2' mr='2' mt='1' as={ArrowLeftIcon} />
+                    Prev </Button>
+
+                    <Button onClick={()=>{handleOnePageChange(+1)}} style={{visibility: currentPage != totalPages ? 'visible' : 'hidden' }} >Next <Icon boxSize='2' ml='2' mt='1' as={ArrowRightIcon} />
+                    </Button>
+                </Box>
             </Flex>
             </>
         )

@@ -12,6 +12,16 @@ function reducer(state,action){
                 ...state , isShopSignUp:true, isIndividualSignUp:false
             }
         }
+        case Actions.LOGIN_USER:{
+            return{
+                ...state , isAuth:true,
+            }
+        }
+        case Actions.LOGOUT_USER:{
+            return{
+                ...state , isAuth:false,
+            }
+        }
         default :{
             return state;
         }

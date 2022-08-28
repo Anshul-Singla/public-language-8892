@@ -1,29 +1,12 @@
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    useDisclosure,
-    Button,
-    Image,
-    Box,
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-    Input,
-    Text,
-    Center,
-    Flex,
-    Link
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Button, Image, Box, FormControl, FormLabel, FormErrorMessage, FormHelperText, Input, Text, Center, Flex, Link
   } from '@chakra-ui/react'
+import { useContext } from 'react';
   import { TiSocialFacebookCircular } from 'react-icons/fa';
+import { AppContext } from '../context/AppContext';
   function LoginModalForm({text , buttonStyles}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    // console.log(useDisclosure())
+    const {state,dispatch , userData , handleChange , handleSubmit } = useContext(AppContext);
+    // console.log('userData:', userData)
     return (
       <>
         <Button style={buttonStyles} onClick={onOpen}>{text}</Button>
@@ -47,9 +30,9 @@ import {
                         height:'250px'
                         }} >
                     <Text fontSize='2vw' color='#666666' >Member Login</Text>
-                    <Input type='email' fontSize='1.5vw' placeholder='Your Email' w='80%'  />
-                    <Input type='password' fontSize='1.5vw' placeholder='Your Password' w='80%'  />
-                    <Input bg='#2BB673' fontSize='1.75vw' color='#fff' w='60%' type='submit' h='' value='Login' p={1} />
+                    <Input type='email' fontSize='1.5vw' placeholder='Your Username' w='80%' name='first_name' onChange={handleChange}  />
+                    <Input type='password' fontSize='1.5vw' placeholder='Your Password' w='80%'   />
+                    <Button disabled={userData.first_name==''} bg='#2BB673' fontSize='1.75vw' color='#fff' w='60%'  p={1} onClick={handleSubmit} >Login</Button>
                 </FormControl>
               </Box>
             </ModalBody>

@@ -8,7 +8,7 @@
 
 #### In this clone we have included most of the functionalities of the original website. The functionalities that we have implemented in this projects are:
 
-1. Landing Page 
+1. **Landing Page** 
     - Navbar
     ![Kindmeal Navbar](./readmdImages/Navbar.png)
 
@@ -16,4 +16,21 @@
         - Carousel ![Cool Carousel](./readmdImages/carousel.png)
 
         - Showing Blog posts ![Blog Posts](./readmdImages/blog_post.png)
+
+    - Footer
+      ![Footer](./readmdImages/footer.png)
+
+2. **Login & SignUp form**
+    Featured overlay form for both Login & Signup Form with the help Chakra UI components
+    ![Login Form](./readmdImages/login.png) ![Signup Form](./readmdImages/signup.png)
+
+3. **Listing Page Food**
+    In the listing page features involved  
+    - Pagination
+    - Images
+    - Discount overlay on Images
+    - Lable overlay Images
+    - API fetching
+    ![Listing Page](./readmdImages/listing_page.png)
+
 

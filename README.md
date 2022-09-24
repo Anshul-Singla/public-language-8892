@@ -8,7 +8,12 @@
 
 #### In this clone we have included most of the functionalities of the original website. The functionalities that we have implemented in this projects are:
 
-- Landing Page 
+1. Landing Page 
     - Navbar
     ![Kindmeal Navbar](./readmdImages/Navbar.png)
+
+    - Body 
+        - Carousel ![Cool Carousel](./readmdImages/carousel.png)
+
+        - Showing Blog posts ![Blog Posts](./readmdImages/blog_post.png)
 

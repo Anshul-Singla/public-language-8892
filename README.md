@@ -34,7 +34,7 @@
     ![Listing Page](./readmdImages/listing_page.png)
 
 
-Got any cool Idea or just want to say hi ping me any time i will get back to you as soon as i can 	:slightly_smiling_faces:
+Got any cool Idea or just want to say hi ping me any time i will get back to you as soon as i can 	:relaxed:
 
 
 
